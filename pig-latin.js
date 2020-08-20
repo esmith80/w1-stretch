@@ -1,13 +1,15 @@
 const translatePigLatin = function(sentenceArray) {
   let translation = "";
   for (let word of sentenceArray) {
+    // removes common characters typed in sentences
     word = word.replace(/,/g, '');
     word = word.replace(/\./g, '');
     word = word.replace(/!/g, '');
+
     if (word.length === 1) {
       word = 'ay' + word;
     } else {
-      word = word.substring(1, word.length) + word.charAt(0) + "ay";
+        word = word.substring(1, word.length) + word.charAt(0) + "ay";
     }
     translation += " " + word;
   }
